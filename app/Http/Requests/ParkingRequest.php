@@ -24,7 +24,8 @@ class ParkingRequest extends FormRequest
     public function rules()
     {
         return [
-            'placeNumber' => 'required|integer'
+            'placeNumber' => 'required|integer',
+            'pricePerDay' => 'required|numeric'
         ];
     }
 }

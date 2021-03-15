@@ -20,6 +20,11 @@
                             @if ($errors->has('placeNumber'))
                                 <span class="red-text">{{ $errors->first('placeNumber') }}</span>
                             @endif
+                            <input name="pricePerDay" value="{{ old('pricePerDay', isset($parking) ? $parking->pricePerDay : null) }}"
+                                   type="text" class="form-control" placeholder="Цена" aria-label="pricePerDay">
+                            @if ($errors->has('pricePerDay'))
+                                <span class="red-text">{{ $errors->first('pricePerDay') }}</span>
+                            @endif
                         </div>
                         <div class="row">
                             <button id="download-button" class="btn-small btn green" type="submit"

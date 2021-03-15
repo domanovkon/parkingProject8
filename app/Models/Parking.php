@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Parking extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['placeNumber'];
+    protected $fillable = ['placeNumber', 'pricePerDay'];
 }

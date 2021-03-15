@@ -37,7 +37,7 @@ class ParkingController extends Controller
      */
     public function store(ParkingRequest $request)
     {
-        Parking::create($request->only(['placeNumber']));
+        Parking::create($request->only(['placeNumber', 'pricePerDay']));
         return redirect()->route('house.show', $request->houseId);
     }
 
@@ -78,7 +78,7 @@ class ParkingController extends Controller
      */
     public function update(ParkingRequest $request, Parking $parking)
     {
-        $parking->update($request->only(['placeNumber']));
+        $parking->update($request->only(['placeNumber', 'pricePerDay']));
         return redirect()->route('house.show', $parking->houseId);
     }
 

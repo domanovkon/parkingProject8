@@ -6,21 +6,16 @@
     <div class="row">
         <div class="col s12 m6">
             <h6></h6>
-            @if (Auth::user()->role == true)
-                <a id="download-button" class="btn-small waves-effect waves-light orange" class="white-text"
-                   href="{{ route('createParking', $parkingData[0]['houseId']) }}"><i
-                        class="material-icons left">add_circle</i>Создать</a>
-            @endif
             <a id="download-button" class="btn-small waves-effect waves-light black" class="white-text"
-               href="/house">Назад</a>
-            @if($data->isEmpty())
+               href="{{url()->previous()}}">Назад</a>
+            @foreach ($parkingReserve as $value)
                 <div class="card white darken-1">
                     <div class="card-content black-text">
-                        <span class="card-title">Все парковочные места заняты</span>
+                        <span class="card-title">{{ $value['address'] }}</span>
                     </div>
                 </div>
-            @endif
-            @foreach ($parkingData as $value)
+            @endforeach
+            @foreach ($parkingReserve as $value)
                 <div class="card white darken-1">
                     <div class="card-content black-text">
                         <span class="card-title">Парковочное место №{{ $value['placeNumber'] }}</span>
@@ -29,23 +24,11 @@
                     </div>
                     <div class="card-action">
                         <a id="download-button" class="btn-small waves-effect waves-light green" class="white-text"
-                           href="{{route('parking.show', $value['id'])}}">Выбрать</a>
-                        @if (Auth::user()->role == true)
-                            <a id="download-button" class="btn-small waves-effect waves-light blue"
-                               class="white-text"
-                               href="{{route('parking.edit', $value['id'])}}">Редактировать</a>
-                            <h6></h6>
-                            <form method="POST" action="{{route('parking.destroy', $value['id'])}}">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <button id="download-button" class="btn-small btn red ajax" type="submit" name="action">
-                                    Удалить
-                                </button>
-                            </form>
-                        @endif
+                           href="{{route('house.show', $value['id'])}}">Бронировать</a>
                     </div>
                 </div>
             @endforeach
+
         </div>
         <div class="row">
             <div class="col s12 m6">

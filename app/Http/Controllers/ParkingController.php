@@ -7,6 +7,7 @@ use App\Models\Parking;
 use App\Models\ParkingType;
 
 use App\Http\Requests\ParkingRequest;
+use Illuminate\Support\Facades\DB;
 
 
 class ParkingController extends Controller
@@ -64,7 +65,19 @@ class ParkingController extends Controller
      */
     public function show($id)
     {
-        //
+        $parking = new Parking;
+        $parkingReserve = DB::table('parkings')
+            ->join('parking_types', 'parkings.typeId', '=', 'parking_types.id')
+            ->join('houses', 'parkings.houseId', '=', 'houses.id')
+            ->select('parkings.*', 'parking_types.typeName', 'houses.address')
+            ->where('parkings.id','=', $id)
+            ->get();
+
+
+        $parkingReserve = $parkingReserve->toArray();
+        $parkingReserve= json_decode( json_encode($parkingReserve), true);
+//        dd($parkingWithTypeArray);
+        return view('parkingReserveView', ['data' => $parking->where('houseId', '=', $id)->orderBy('pricePerDay')->paginate(10)], ['parkingReserve' => $parkingReserve]);
     }
 
     /**

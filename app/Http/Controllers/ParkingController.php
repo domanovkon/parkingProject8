@@ -75,7 +75,9 @@ class ParkingController extends Controller
      */
     public function edit(Parking $parking)
     {
-        return view('parkingUpdateView', compact('parking'));
+        $parkingTypesToUpdate = ParkingType::get();
+//        return view('parkingUpdateView', compact('houseId'), compact('parkingTypes'));
+        return view('parkingUpdateView', compact('parking'), compact('parkingTypesToUpdate'));
     }
 
     /**
@@ -87,7 +89,7 @@ class ParkingController extends Controller
      */
     public function update(ParkingRequest $request, Parking $parking)
     {
-        $parking->update($request->only(['placeNumber', 'pricePerDay']));
+        $parking->update($request->only(['typeId','placeNumber', 'pricePerDay']));
         return redirect()->route('house.show', $parking->houseId);
     }
 

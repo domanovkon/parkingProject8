@@ -8,7 +8,7 @@
             <h6></h6>
             @if (Auth::user()->role == true)
                 <a id="download-button" class="btn-small waves-effect waves-light orange" class="white-text"
-                   href="{{ route('parking.create') }}"><i
+                   href="{{ route('createParking', $parkingData[0]['houseId']) }}"><i
                             class="material-icons left">add_circle</i>Создать</a>
             @endif
             <a id="download-button" class="btn-small waves-effect waves-light black" class="white-text"
@@ -38,7 +38,7 @@
                             <form method="POST" action="{{route('parking.destroy', $value['id'])}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <button id="download-button" class="btn-small btn red" type="submit" name="action">
+                                <button id="download-button" class="btn-small btn red ajax" type="submit" name="action">
                                     Удалить
                                 </button>
                             </form>

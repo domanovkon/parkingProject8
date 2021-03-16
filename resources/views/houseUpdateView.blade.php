@@ -9,7 +9,7 @@
                 <div class="col s12"><p></p></div>
                 <div class="col s12 m4 l2"></div>
                 <div class="col s12 m4 l8">
-                    <form method="POST" @if (isset($house)) action="{{ route('house.update', $house) }}"
+                    <form method="POST" @if (isset($house)) action="{{ route('house.update', $house) }}" class="ajax"
                           @else
                           action="{{ route('house.store') }}" @endif>
                         {{ isset($house) ? method_field('PUT') : method_field('POST') }}
@@ -22,7 +22,7 @@
                             @endif
                         </div>
                         <div class="row">
-                            <button id="download-button" class="btn-small btn green" type="submit"
+                            <button id="download-button" class="btn-small btn green ajax" type="submit"
                                     name="action">{{ isset($house) ? 'Обновить' : 'Добавить' }}</button>
                             <a id="download-button" class="btn-small waves-effect waves-light black" class="white-text"
                                href="/house">Отмена</a>

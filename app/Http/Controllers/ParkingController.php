@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Parking;
 
+use App\Models\ParkingType;
+
 use App\Http\Requests\ParkingRequest;
 
 
@@ -29,6 +31,12 @@ class ParkingController extends Controller
         return view('parkingUpdateView');
     }
 
+    public function createParking($houseId)
+    {
+        $parkingTypes = ParkingType::get();
+        return view('parkingUpdateView', compact('houseId'), compact('parkingTypes'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,7 +45,8 @@ class ParkingController extends Controller
      */
     public function store(ParkingRequest $request)
     {
-        Parking::create($request->only(['placeNumber', 'pricePerDay']));
+//        dd($request);
+        Parking::create($request->only(['houseId', 'typeId', 'placeNumber', 'pricePerDay']));
         return redirect()->route('house.show', $request->houseId);
     }
 
@@ -91,6 +100,7 @@ class ParkingController extends Controller
     public function destroy(Parking $parking)
     {
         $parking->delete();
-        return redirect()->route('house.show', $parking->houseId);
+//        return redirect()->route('house.show', $parking->houseId);
+        return \Ajax::redirect(route('house.show',  $parking->houseId));
     }
 }

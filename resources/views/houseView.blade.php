@@ -25,11 +25,11 @@
                             <a id="download-button" class="btn-small waves-effect waves-light blue" class="white-text"
                                href="{{route('house.edit', $value)}}">Редактировать</a>
                             <h6></h6>
-                            <form method="POST" action="{{route('house.destroy', $value)}}">
+                            <form method="POST" action="{{route('house.destroy', $value)}}" class="ajax">
 
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <button id="download-button" class="btn-small btn red" type="submit" name="action">
+                                <button id="download-button" class="btn-small btn red ajax" type="submit" name="action">
                                     Удалить
                                 </button>
                             </form>

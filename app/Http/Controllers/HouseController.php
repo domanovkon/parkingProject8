@@ -48,7 +48,7 @@ class HouseController extends Controller
     public function store(HouseRequest $request)
     {
         House::create($request->only(['address']));
-        return redirect()->route('house.index');
+        return \Ajax::redirect(route('house.index'));
     }
 
     /**
@@ -95,7 +95,7 @@ class HouseController extends Controller
     public function update(HouseRequest $request, House $house)
     {
         $house->update($request->only(['address']));
-        return redirect()->route('house.index');
+        return \Ajax::redirect(route('house.index'));
     }
 
     /**
@@ -107,6 +107,6 @@ class HouseController extends Controller
     public function destroy(House $house)
     {
         $house->delete();
-        return redirect()->route('house.index');
+        return \Ajax::redirect(route('house.index'));
     }
 }

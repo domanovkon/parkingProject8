@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/createParking/{id}', [App\Http\Controllers\ParkingController::class, 'createParking'])->name('createParking');
+
 Route::resource('house', App\Http\Controllers\HouseController::class);
 
 Route::resource('car', App\Http\Controllers\CarsController::class);

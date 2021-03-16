@@ -25,6 +25,12 @@
                             @if ($errors->has('pricePerDay'))
                                 <span class="red-text">{{ $errors->first('pricePerDay') }}</span>
                             @endif
+                            <select name="typeId" style="display: block">
+                                @foreach($parkingTypes as $parkingType)
+                                <option value="{{ $parkingType->id }}"> {{ $parkingType->typeName }} </option>
+                                @endforeach
+                            </select>
+                            <input id="houseId" name="houseId" type="hidden" value="{{ old('houseId', isset($parking) ? $parking->houseId : $houseId) }}">
                         </div>
                         <div class="row">
                             <button id="download-button" class="btn-small btn green" type="submit"

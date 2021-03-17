@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ParkingRequest;
+use App\Http\Requests\RentRequest;
+use App\Models\Rent;
 use Illuminate\Http\Request;
 
 class RentsController extends Controller
@@ -32,9 +35,9 @@ class RentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RentRequest $request)
     {
-        //
+        dd($request);
     }
 
     /**

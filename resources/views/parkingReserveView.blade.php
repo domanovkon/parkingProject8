@@ -21,10 +21,22 @@
                         <span class="card-title">Парковочное место №{{ $value['placeNumber'] }}</span>
                         <span class="card-title">Тип: {{ $value['typeName'] }}</span>
                         <span class="card-title">{{ $value['pricePerDay'] }} ₽ в день</span>
+                        <form method="POST" action="{{ route('rent.store') }}">
+                            {{ csrf_field() }}
+                            <input id="houseId" name="houseId" type="hidden"
+                                   value="{{ $value['placeNumber'] }}">
+                            <input id="typeName" name="typeName" type="hidden"
+                                   value="{{ $value['typeName'] }}">
+                            <input id="pricePerDay" name="pricePerDay" type="hidden"
+                                   value="{{ $value['pricePerDay'] }}">
+                            <input id="startDate" name="startDate" type="hidden" class="form-control"
+                                   value="{{date("Y-m-d")}}">
+                            <input id="endDate" name="endDate" type="date" class="form-control">
+                            <button id="download-button" class="btn-small btn green" type="submit"
+                                    name="action">Бронировать</button>
+                        </form>
                     </div>
                     <div class="card-action">
-                        <a id="download-button" class="btn-small waves-effect waves-light green" class="white-text"
-                           href="{{route('house.show', $value['id'])}}">Бронировать</a>
                     </div>
                 </div>
             @endforeach

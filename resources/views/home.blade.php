@@ -28,8 +28,8 @@
                             <td>{{$rent['address']}}</td>
                             <td>{{$rent['placeNumber']}}</td>
                             <td>{{$rent['typeName']}}</td>
-                            <td>{{$rent['startDate']}}</td>
-                            <td>{{$rent['endDate']}}</td>
+                            <td>{{substr($rent['startDate'], -19, 10)}}</td>
+                            <td>{{substr($rent['endDate'], -19, 10)}}</td>
                             <td>{{$rent['sum']}}</td>
                         </tr>
                     @endforeach

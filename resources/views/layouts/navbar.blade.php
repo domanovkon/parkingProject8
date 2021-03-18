@@ -12,7 +12,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="http://pngimg.com/uploads/parking/parking_PNG93.ico" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
 
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,8 +53,12 @@
     </div>
 </nav>
 
-@yield('body')
+<main class="relative flex items-top justify-center min-h-screen">
+    @yield('body')
+</main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="/js/laravel.ajax.js"></script>
 </body>
 
 <footer class="page-footer light-green darken-1">
@@ -79,8 +93,5 @@
         </div>
     </div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="/js/laravel.ajax.js"></script>
 
 </html>

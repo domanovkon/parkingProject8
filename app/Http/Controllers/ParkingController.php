@@ -76,7 +76,7 @@ class ParkingController extends Controller
 
         $parkingReserve = $parkingReserve->toArray();
         $parkingReserve= json_decode( json_encode($parkingReserve), true);
-//        dd($parkingWithTypeArray);
+//        dd($parkingReserve);
         return view('parkingReserveView', ['data' => $parking->where('houseId', '=', $id)->orderBy('pricePerDay')->paginate(10)], ['parkingReserve' => $parkingReserve]);
     }
 

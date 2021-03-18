@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Parking;
 use App\Models\ParkingType;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -62,8 +63,10 @@ class HouseController extends Controller
         $parking = new Parking;
         $parkingWithType = DB::table('parkings')
             ->join('parking_types', 'parkings.typeId', '=', 'parking_types.id')
-            ->select('parkings.*', 'parking_types.typeName')
+//            ->join('rents', 'parkings.id', '=', 'rents.parkingId')
+            ->select('parkings.*', 'parking_types.typeName')//, 'rents.*')
             ->where('houseId','=', $id)
+//            ->where('endDate', '>', Carbon::now())
             ->orderBy('pricePerDay')
             ->get();
 

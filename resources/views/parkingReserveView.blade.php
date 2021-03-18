@@ -29,14 +29,14 @@
                                    value="{{ $value['typeName'] }}">
                             <input id="pricePerDay" name="pricePerDay" type="hidden"
                                    value="{{ $value['pricePerDay'] }}">
+                            <input id="parkingId" name="parkingId" type="hidden" class="form-control"
+                                   value="{{ $value['id'] }}">
                             <input id="startDate" name="startDate" type="hidden" class="form-control"
                                    value="{{date("Y-m-d")}}">
                             <input id="endDate" name="endDate" type="date" class="form-control">
                             <button id="download-button" class="btn-small btn green" type="submit"
                                     name="action">Бронировать</button>
                         </form>
-                    </div>
-                    <div class="card-action">
                     </div>
                 </div>
             @endforeach

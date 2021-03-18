@@ -30,7 +30,7 @@
                             <td>{{$rent['typeName']}}</td>
                             <td>{{substr($rent['startDate'], -19, 10)}}</td>
                             <td>{{substr($rent['endDate'], -19, 10)}}</td>
-                            <td>{{$rent['sum']}}</td>
+                            <td>{{$rent['sum']}} ₽</td>
                         </tr>
                     @endforeach
                 </table>

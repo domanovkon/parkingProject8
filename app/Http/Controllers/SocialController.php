@@ -19,7 +19,7 @@ class SocialController extends Controller
 
         $objSocial = new SocialService();
 
-        if ($objSocial->$objSocial->saveSocialData($user)) {
+        if ($user = $objSocial->saveSocialData($user)) {
             \Auth::login($user);
             return redirect()->route('home');
         }

@@ -45,6 +45,7 @@
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}} />
                                     </label>
+                                    <a href="{{route('vk.auth')}}">Вход через VK</a>
 {{--                                    <label>--}}
 {{--                                        <input type="checkbox" name="remember" class="filled-in" {{ old('remember') ? 'checked' : ''}} />--}}
 {{--                                        <span>Запомнить меня</span>--}}

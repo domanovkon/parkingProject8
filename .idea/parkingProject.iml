@@ -116,6 +116,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/facade/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/facade/ignition" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/socialiteproviders/manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/socialiteproviders/vkontakte" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

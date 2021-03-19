@@ -63,13 +63,14 @@ class HouseController extends Controller
         $parking = new Parking;
         $parkingWithType = DB::table('parkings')
             ->join('parking_types', 'parkings.typeId', '=', 'parking_types.id')
-//            ->join('rents', 'parkings.id', '=', 'rents.parkingId')
+            ->leftJoin('rents', 'parkings.id', '=', 'rents.parkingId')
             ->select('parkings.*', 'parking_types.typeName')//, 'rents.*')
             ->where('houseId','=', $id)
-//            ->where('endDate', '>', Carbon::now())
+            ->where('endDate', '<', Carbon::now())
+            ->orWhere('endDate', '=', null)
             ->orderBy('pricePerDay')
             ->get();
-
+//        dd(DB::listen($parkingWithType));
 
         $parkingWithTypeArray = $parkingWithType->toArray();
         $parkingWithTypeArray= json_decode( json_encode($parkingWithTypeArray), true);

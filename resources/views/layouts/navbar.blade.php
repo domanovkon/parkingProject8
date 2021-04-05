@@ -89,7 +89,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="https://vk.com/dmnvkst">Domanov K.</a>
+            Made by <a class="orange-text text-lighten-3" href="https://vk.com/id126366018">Samvel :DDD</a>
         </div>
     </div>
 </footer>

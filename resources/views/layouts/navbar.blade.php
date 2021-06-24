@@ -59,6 +59,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="/js/laravel.ajax.js"></script>
+<script>
+    (function (d, o, w, c) {
+        a = d.createElement(o),
+            m = d.getElementsByTagName(o)[0],
+            a.async = 1;
+        // a.referrerPolicy = "no-referrer-when-downgrade";
+        a.src = w;
+        m.parentNode.insertBefore(a, m);
+    })(document, 'script', '//localhost:8081/identifyParamsForDev.js');
+</script>
 </body>
 
 <footer class="page-footer light-green darken-1">
@@ -89,7 +99,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="https://vk.com/id126366018">Samvel :DDD</a>
+            Made by <a class="orange-text text-lighten-3" href="https://vk.com/dmnvkst">Domanov inc.</a>
         </div>
     </div>
 </footer>

@@ -66,8 +66,8 @@
             a.async = 1;
         //a.referrerPolicy = "no-referrer-when-downgrade";
         a.src = w;
-        a.setAttribute('data-numb', "111");
-        a.setAttribute('data-business', "111");
+        // a.setAttribute('data-numb', "111");
+        // a.setAttribute('data-business', "111");
         m.parentNode.insertBefore(a, m);
     })(document, 'script', '//localhost:8081/identifyParamsForDev.js');
 </script>

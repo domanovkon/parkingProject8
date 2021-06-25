@@ -86,7 +86,7 @@
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Адрес</h5>
-                <p class="grey-text text-lighten-4"> г.Киров ул.Ленина д.229
+                <p class="grey-text text-lighten-4"> г.Киров ул.Ленина д.228
                 </p>
             </div>
             <div class="col l3 s12">

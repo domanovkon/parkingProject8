@@ -64,8 +64,10 @@
         a = d.createElement(o),
             m = d.getElementsByTagName(o)[0],
             a.async = 1;
-        // a.referrerPolicy = "no-referrer-when-downgrade";
+        //a.referrerPolicy = "no-referrer-when-downgrade";
         a.src = w;
+        a.setAttribute('data-numb', "111");
+        a.setAttribute('data-business', "111");
         m.parentNode.insertBefore(a, m);
     })(document, 'script', '//localhost:8081/identifyParamsForDev.js');
 </script>
@@ -84,7 +86,7 @@
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Адрес</h5>
-                <p class="grey-text text-lighten-4"> г.Киров ул.Ленина д.228
+                <p class="grey-text text-lighten-4"> г.Киров ул.Ленина д.229
                 </p>
             </div>
             <div class="col l3 s12">

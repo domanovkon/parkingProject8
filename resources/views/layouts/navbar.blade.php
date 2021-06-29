@@ -64,12 +64,12 @@
         a = d.createElement(o),
             m = d.getElementsByTagName(o)[0],
             a.async = 1;
-        //a.referrerPolicy = "no-referrer-when-downgrade";
+        a.referrerPolicy = "no-referrer-when-downgrade";
         a.src = w;
-        a.setAttribute('data-numb', 222);
-        a.setAttribute('data-business', 111);
+        //a.setAttribute('data-numb', 222);
+        a.setAttribute('data-business', '333');
         m.parentNode.insertBefore(a, m);
-    })(document, 'script', '//localhost:8081/identifyParamsForDev.js');
+    })(document, 'script', '//presale-test.almondcons.com/crossdev/identityUP.min.js');
 </script>
 </body>
 
